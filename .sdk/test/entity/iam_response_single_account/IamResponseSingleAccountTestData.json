@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "iam_response_single_account": {
+      "IAM_RESPONSE_SINGLE_ACCOUNT00": {
+        "id": "IAM_RESPONSE_SINGLE_ACCOUNT00",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_RESPONSE_SINGLE_ACCOUNT01": {
+        "id": "IAM_RESPONSE_SINGLE_ACCOUNT01",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "IAM_RESPONSE_SINGLE_ACCOUNT02": {
+        "id": "IAM_RESPONSE_SINGLE_ACCOUNT02",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "iam_response_single_account": {
+      "iam_response_single_account_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/move": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/profile": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

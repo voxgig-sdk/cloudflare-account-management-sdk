@@ -1,0 +1,9 @@
+# BasicResourceTaggingFlow
+
+main: kit: flow: BasicResourceTaggingFlow:
+{
+  entity: "resource_tagging",
+  kind: "basic",
+  name: "BasicResourceTaggingFlow",
+  "key$": "BasicResourceTaggingFlow"
+}

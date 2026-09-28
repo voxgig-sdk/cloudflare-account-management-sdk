@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "resource_tagging_tagged_resource_response_single": {
+      "RESOURCE_TAGGING_TAGGED_RESOURCE_RESPONSE_SINGLE00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "zone_id": "ZONE01",
+        "account_id": "ACCOUNT01",
+        "id": "RESOURCE_TAGGING_TAGGED_RESOURCE_RESPONSE_SINGLE00"
+      },
+      "RESOURCE_TAGGING_TAGGED_RESOURCE_RESPONSE_SINGLE01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "zone_id": "ZONE01",
+        "account_id": "ACCOUNT01",
+        "id": "RESOURCE_TAGGING_TAGGED_RESOURCE_RESPONSE_SINGLE01"
+      },
+      "RESOURCE_TAGGING_TAGGED_RESOURCE_RESPONSE_SINGLE02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "zone_id": "ZONE01",
+        "account_id": "ACCOUNT01",
+        "id": "RESOURCE_TAGGING_TAGGED_RESOURCE_RESPONSE_SINGLE02"
+      }
+    }
+  },
+  "new": {
+    "resource_tagging_tagged_resource_response_single": {
+      "resource_tagging_tagged_resource_response_single_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /zones/{zone_id}/tags": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/tags": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/tags": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /zones/{zone_id}/tags": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

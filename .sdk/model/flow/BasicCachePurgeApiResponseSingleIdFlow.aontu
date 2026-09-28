@@ -1,0 +1,23 @@
+# BasicCachePurgeApiResponseSingleIdFlow
+
+main: kit: flow: BasicCachePurgeApiResponseSingleIdFlow:
+{
+  entity: "cache_purge_api_response_single_id",
+  kind: "basic",
+  name: "BasicCachePurgeApiResponseSingleIdFlow",
+  step: [
+    {
+      i: {
+        ref: "cache_purge_api_response_single_id_ref01"
+      }
+
+      m: {
+        environment_id: "environment01",
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCachePurgeApiResponseSingleIdFlow"
+}

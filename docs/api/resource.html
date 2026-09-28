@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Resource | Cloudflare Account &amp; Zone Management</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Account &amp; Zone Management<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-account-management-sdk">voxgig-sdk/cloudflare-account-management-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Account &amp; Zone Management</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_setting.html">AccountSetting</a>
+<a href="../api/cache_purge_api_response_single_id.html">CachePurgeApiResponseSingleId</a>
+<a href="../api/cps_communication_preference.html">CpsCommunicationPreference</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_response_single_account.html">IamResponseSingleAccount</a>
+<a href="../api/iam_single_user.html">IamSingleUser</a>
+<a href="../api/kamino_environment.html">KaminoEnvironment</a>
+<a aria-current="page" href="../api/resource.html">Resource</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_idtagsresources">GET /accounts/{account_id}/tags/resources</a></div>
+<a href="../api/resource_tagging.html">ResourceTagging</a>
+<a href="../api/resource_tagging_tag_key_summary_response_collection.html">ResourceTaggingTagKeySummaryResponseCollection</a>
+<a href="../api/resource_tagging_tag_keys_response_collection.html">ResourceTaggingTagKeysResponseCollection</a>
+<a href="../api/resource_tagging_tag_values_response_collection.html">ResourceTaggingTagValuesResponseCollection</a>
+<a href="../api/resource_tagging_tagged_resource_response_single.html">ResourceTaggingTaggedResourceResponseSingle</a>
+<a href="../api/zone.html">Zone</a>
+<a href="../api/zone_hold.html">ZoneHold</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="resource">Resource</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idtagsresources"><code>/accounts/{account_id}/tags/resources</code></a></td>
+<td><code>list</code></td>
+<td>List tagged resources response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">resources, err := client.Resource(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(resources)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local resources, err = client:Resource():list({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$resources = $client-&gt;Resource()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">resources = client.Resource().list({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">resources = client.Resource.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const resources = await client.Resource().list({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result Info</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idtagsresources" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/tags/resources</h3>
+<p>Operation ID: <code>tags-list</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>type</code> | <code>query</code> | <code>array of enum: access_application, access_application_policy, access_group, account, account_ruleset, ai_gateway, ...</code> | No | Filter by resource type. Can be repeated to filter by multiple types (OR logic). Example: ?type=zone&amp;type=worker |
+| <code>name</code> | <code>query</code> | <code>string</code> | No | Filter by resource name. Performs a case-insensitive substring match. Example: ?name=my-zone |
+| <code>id</code> | <code>query</code> | <code>array of string</code> | No | Filter by resource ID. Can be repeated up to 50 times to filter by multiple IDs. Example: ?id=abc&amp;id=def |
+| <code>case_insensitive</code> | <code>query</code> | <code>boolean</code> | No | Match <code>tag</code> keys and values case-insensitively. Stored casing is unchanged. Example: ?tag=environment=production&amp;<code>case_insensitive</code>=true |
+| <code>tag</code> | <code>query</code> | <code>array of string</code> | No | Filter resources by tag criteria. This parameter can be repeated multiple times, with AND logic between parameters. Supported syntax: - <strong>Key-only</strong>: <code>tag=&amp;lt;key&amp;gt;</code> - Resource must have the tag key (for example, <code>tag=production</code>) - <strong>Key-value</strong>: <code>tag=&amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;</code> - Resource must have the tag with specific value (for example, <code>tag=env=prod</code>) - <strong>Multiple values (OR)</strong>: <code>tag=&amp;lt;key&amp;gt;=&amp;lt;v1&amp;gt;,&amp;lt;v2&amp;gt;</code> - Resource must have tag with any of the values (for example, <code>tag=env=prod,staging</code>) - <strong>Negate key-only</strong>: <code>tag=!&amp;lt;key&amp;gt;</code> - Resource must not have the tag key (for example, <code>tag=!archived</code>) - <strong>Negate key-value</strong>: <code>tag=&amp;lt;key&amp;gt;!=&amp;lt;value&amp;gt;</code> - Resource must not have the tag with specific value (for example, <code>tag=region!=us-west-1</code>) Multiple tag parameters are combined with AND logic. |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Cursor for pagination. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-list-tagged-resources-response" class="status" data-status="2xx">200: List tagged resources response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-tagged-resources-response-failure">4XX: List tagged resources response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="5xx-list-tagged-resources-response-failure">5XX: List tagged resources response failure</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

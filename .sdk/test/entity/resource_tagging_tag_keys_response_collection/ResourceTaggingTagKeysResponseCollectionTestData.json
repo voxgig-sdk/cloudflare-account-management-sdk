@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "resource_tagging_tag_keys_response_collection": {
+      "RESOURCE_TAGGING_TAG_KEYS_RESPONSE_COLLECTION00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "RESOURCE_TAGGING_TAG_KEYS_RESPONSE_COLLECTION01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "RESOURCE_TAGGING_TAG_KEYS_RESPONSE_COLLECTION02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "resource_tagging_tag_keys_response_collection": {
+      "resource_tagging_tag_keys_response_collection_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/tags/keys": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

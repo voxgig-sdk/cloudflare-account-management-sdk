@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "zone_hold": {
+      "ZONE_HOLD00": {
+        "hold": true,
+        "hold_after": "s33",
+        "id": "ZONE_HOLD00",
+        "include_subdomains": false,
+        "result": {},
+        "zone_id": "ZONE01"
+      },
+      "ZONE_HOLD01": {
+        "hold": true,
+        "hold_after": "s65",
+        "id": "ZONE_HOLD01",
+        "include_subdomains": false,
+        "result": {},
+        "zone_id": "ZONE01"
+      },
+      "ZONE_HOLD02": {
+        "hold": true,
+        "hold_after": "s97",
+        "id": "ZONE_HOLD02",
+        "include_subdomains": false,
+        "result": {},
+        "zone_id": "ZONE01"
+      }
+    }
+  },
+  "new": {
+    "zone_hold": {
+      "zone_hold_ref01": {
+        "hold": true,
+        "hold_after": "sc9",
+        "include_subdomains": false,
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /zones/{zone_id}/hold": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/hold/{zone_name}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/hold": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /zones/{zone_id}/hold": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /zones/{zone_id}/hold": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

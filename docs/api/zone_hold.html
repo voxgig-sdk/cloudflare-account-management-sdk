@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ZoneHold | Cloudflare Account &amp; Zone Management</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Account &amp; Zone Management<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-account-management-sdk">voxgig-sdk/cloudflare-account-management-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Account &amp; Zone Management</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_setting.html">AccountSetting</a>
+<a href="../api/cache_purge_api_response_single_id.html">CachePurgeApiResponseSingleId</a>
+<a href="../api/cps_communication_preference.html">CpsCommunicationPreference</a>
+<a href="../api/iam_api_response_single_id.html">IamApiResponseSingleId</a>
+<a href="../api/iam_response_single_account.html">IamResponseSingleAccount</a>
+<a href="../api/iam_single_user.html">IamSingleUser</a>
+<a href="../api/kamino_environment.html">KaminoEnvironment</a>
+<a href="../api/resource.html">Resource</a>
+<a href="../api/resource_tagging.html">ResourceTagging</a>
+<a href="../api/resource_tagging_tag_key_summary_response_collection.html">ResourceTaggingTagKeySummaryResponseCollection</a>
+<a href="../api/resource_tagging_tag_keys_response_collection.html">ResourceTaggingTagKeysResponseCollection</a>
+<a href="../api/resource_tagging_tag_values_response_collection.html">ResourceTaggingTagValuesResponseCollection</a>
+<a href="../api/resource_tagging_tagged_resource_response_single.html">ResourceTaggingTaggedResourceResponseSingle</a>
+<a href="../api/zone.html">Zone</a>
+<a aria-current="page" href="../api/zone_hold.html">ZoneHold</a><div class="nav-sections"><a class="nav-section" href="#post-zoneszone_idhold">POST /zones/{zone_id}/hold</a>
+<a class="nav-section" href="#get-zoneszone_idholdzone_name">GET /zones/{zone_id}/hold/{zone_name}</a>
+<a class="nav-section" href="#get-zoneszone_idhold">GET /zones/{zone_id}/hold</a>
+<a class="nav-section" href="#delete-zoneszone_idhold">DELETE /zones/{zone_id}/hold</a>
+<a class="nav-section" href="#patch-zoneszone_idhold">PATCH /zones/{zone_id}/hold</a></div></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="zonehold">ZoneHold</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-zoneszone_idhold"><code>/zones/{zone_id}/hold</code></a></td>
+<td><code>create</code></td>
+<td>Successful Response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-zoneszone_idholdzone_name"><code>/zones/{zone_id}/hold/{zone_name}</code></a></td>
+<td><code>load</code></td>
+<td>Successful Response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-zoneszone_idhold"><code>/zones/{zone_id}/hold</code></a></td>
+<td><code>load</code></td>
+<td>Successful Response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-zoneszone_idhold"><code>/zones/{zone_id}/hold</code></a></td>
+<td><code>remove</code></td>
+<td>Successful Response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-zoneszone_idhold"><code>/zones/{zone_id}/hold</code></a></td>
+<td><code>update</code></td>
+<td>Successful Response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">zone_hold, err := client.ZoneHold(nil).Load(map[string]any{&quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(zone_hold)
+created, err := client.ZoneHold(nil).Create(map[string]any{&quot;id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.ZoneHold(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;hold&quot;: true, &quot;hold_after&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.ZoneHold(nil).Remove(map[string]any{&quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local zone_hold, err = client:ZoneHold():load({ id = &quot;example_id&quot; })
+local created, err = client:ZoneHold():create({ id = &quot;example&quot; })
+local updated, err = client:ZoneHold():update({ id = &quot;example_id&quot;, hold = true, hold_after = &quot;example&quot; })
+local removed, err = client:ZoneHold():remove({ id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$zone_hold = $client-&gt;ZoneHold()-&gt;load([&quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;ZoneHold()-&gt;create([&quot;id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;ZoneHold()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;hold&quot; =&gt; true, &quot;hold_after&quot; =&gt; &quot;example&quot;]);
+$client-&gt;ZoneHold()-&gt;remove([&quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">zone_hold = client.ZoneHold().load({&quot;id&quot;: &quot;example_id&quot;})
+created = client.ZoneHold().create({ &quot;id&quot;: &quot;example&quot; })
+updated = client.ZoneHold().update({&quot;id&quot;: &quot;example_id&quot;, &quot;hold&quot;: True, &quot;hold_after&quot;: &quot;example&quot;})
+client.ZoneHold().remove({&quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">zone_hold = client.ZoneHold.load({ &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.ZoneHold.create({ &quot;id&quot; =&gt; &quot;example&quot; })
+updated = client.ZoneHold.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;hold&quot; =&gt; true, &quot;hold_after&quot; =&gt; &quot;example&quot; })
+client.ZoneHold.remove({ &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const zone_hold = await client.ZoneHold().load({ id: &quot;example_id&quot; })
+const created = await client.ZoneHold().create({ id: &quot;example&quot; })
+const updated = await client.ZoneHold().update({ id: &quot;example_id&quot;, hold: true, hold_after: &quot;example&quot; })
+await client.ZoneHold().remove({ id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hold</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the hostname is currently subject to a zone hold.</td>
+</tr>
+<tr>
+<td><code>hold_after</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The RFC3339-formatted timestamp at which the hold will be automatically re-enabled, if the hold was temporarily disabled.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>include_subdomains</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the hold extends to block subdomains of the held zone.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-zoneszone_idhold" class="operation" data-method="post"><code>POST</code> /zones/{zone_id}/hold</h3>
+<p>Operation ID: <code>zones-0-hold-post</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes | Zone ID |
+| <code>include_subdomains</code> | <code>query</code> | <code>boolean</code> | No | If provided, the zone hold will extend to block any subdomain of the given zone, as well as SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname 'example.com' and <code>include_subdomains</code>=true will block 'example.com', 'staging.example.com', 'api.staging.example.com', etc. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-successful-response" class="status" data-status="2xx">200: Successful Response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-client-error">4XX: Client Error</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-zoneszone_idholdzone_name" class="operation" data-method="get"><code>GET</code> /zones/{zone_id}/hold/{zone_name}</h3>
+<p>Operation ID: <code>zones-0-hold-zone-name-get</code>.</p>
+<p>Authentication: not required.</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes | Zone identifier. Consumed by the API gateway for routing; the backend handler does not use this value directly. |
+| <code>zone_name</code> | <code>path</code> | <code>string</code> | Yes | The hostname to check for a zone hold. May be a subdomain (for example <code>subdomain.example.com</code>) or an apex domain (for example <code>example.com</code>). The service checks the hostname and its ancestor domains for active holds with <code>include_subdomains</code> enabled. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-successful-response-1" class="status" data-status="2xx">200: Successful Response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hold</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the hostname is currently subject to a zone hold.</td>
+</tr>
+<tr>
+<td><code>hold_after</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>The RFC3339-formatted timestamp at which the hold will be automatically re-enabled, if the hold was temporarily disabled. Null if the hold is permanently enabled or not set.</td>
+</tr>
+<tr>
+<td><code>include_subdomains</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the hold extends to block subdomains of the held zone.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-1">4XX: Client Error</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h3 id="get-zoneszone_idhold" class="operation" data-method="get"><code>GET</code> /zones/{zone_id}/hold</h3>
+<p>Operation ID: <code>zones-0-hold-get</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes | Zone ID |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-successful-response-2" class="status" data-status="2xx">200: Successful Response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-client-error-2">4XX: Client Error</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="remove">remove</h2>
+<h3 id="delete-zoneszone_idhold" class="operation" data-method="delete"><code>DELETE</code> /zones/{zone_id}/hold</h3>
+<p>Operation ID: <code>zones-0-hold-delete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes | Zone ID |
+| <code>hold_after</code> | <code>query</code> | <code>string</code> | No | If <code>hold_after</code> is provided, the hold will be temporarily disabled, then automatically re-enabled by the system at the time specified in this RFC3339-formatted timestamp. Otherwise, the hold will be disabled indefinitely. <code>hold_after</code> cannot be provided for CDN-only zones. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-successful-response-3" class="status" data-status="2xx">200: Successful Response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-client-error-3">4XX: Client Error</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="patch-zoneszone_idhold" class="operation" data-method="patch"><code>PATCH</code> /zones/{zone_id}/hold</h3>
+<p>Operation ID: <code>zones-0-hold-patch</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>zone_id</code> | <code>path</code> | <code>string</code> | Yes | Zone ID |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hold_after</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>If <code>hold_after</code> is provided and future-dated, the hold will be temporarily disabled, then automatically re-enabled by the system at the time specified in this RFC3339-formatted timestamp. A past-dated <code>hold_after</code> value will have no effect on an existing, enabled hold. Providing an empty string will set its value to the current time. Providing <code>null</code> will disable the hold indefinitely.</td>
+</tr>
+<tr>
+<td><code>include_subdomains</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If <code>true</code>, the zone hold will extend to block any subdomain of the given zone, as well as SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname 'example.com' and <code>include_subdomains</code>=true will block 'example.com', 'staging.example.com', 'api.staging.example.com', etc.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-successful-response-4" class="status" data-status="2xx">200: Successful Response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object and object</code>.</p>
+<h5 id="4xx-client-error-4">4XX: Client Error</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

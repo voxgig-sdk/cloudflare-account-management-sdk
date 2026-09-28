@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "iam_single_user": {
+      "IAM_SINGLE_USER00": {
+        "country": "s3c",
+        "first_name": "s3d",
+        "last_name": "s3e",
+        "result": {},
+        "telephone": "s40",
+        "zipcode": "s41",
+        "id": "IAM_SINGLE_USER00"
+      },
+      "IAM_SINGLE_USER01": {
+        "country": "s78",
+        "first_name": "s79",
+        "last_name": "s7a",
+        "result": {},
+        "telephone": "s7c",
+        "zipcode": "s7d",
+        "id": "IAM_SINGLE_USER01"
+      },
+      "IAM_SINGLE_USER02": {
+        "country": "sb4",
+        "first_name": "sb5",
+        "last_name": "sb6",
+        "result": {},
+        "telephone": "sb8",
+        "zipcode": "sb9",
+        "id": "IAM_SINGLE_USER02"
+      }
+    }
+  },
+  "new": {
+    "iam_single_user": {
+      "iam_single_user_ref01": {
+        "country": "sf0",
+        "first_name": "sf1",
+        "last_name": "sf2",
+        "result": {},
+        "telephone": "sf4",
+        "zipcode": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "GET /user": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /user": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

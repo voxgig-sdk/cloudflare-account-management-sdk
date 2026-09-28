@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "iam_api_response_single_id": {
+      "IAM_API_RESPONSE_SINGLE_ID00": {
+        "name": "s32",
+        "result": [],
+        "standalone": true,
+        "type": "s35",
+        "unit": {},
+        "account_id": "ACCOUNT01",
+        "id": "IAM_API_RESPONSE_SINGLE_ID00"
+      },
+      "IAM_API_RESPONSE_SINGLE_ID01": {
+        "name": "s64",
+        "result": [],
+        "standalone": true,
+        "type": "s67",
+        "unit": {},
+        "account_id": "ACCOUNT01",
+        "id": "IAM_API_RESPONSE_SINGLE_ID01"
+      },
+      "IAM_API_RESPONSE_SINGLE_ID02": {
+        "name": "s96",
+        "result": [],
+        "standalone": true,
+        "type": "s99",
+        "unit": {},
+        "account_id": "ACCOUNT01",
+        "id": "IAM_API_RESPONSE_SINGLE_ID02"
+      }
+    }
+  },
+  "new": {
+    "iam_api_response_single_id": {
+      "iam_api_response_single_id_ref01": {
+        "name": "sc8",
+        "result": [],
+        "standalone": true,
+        "type": "scb",
+        "unit": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

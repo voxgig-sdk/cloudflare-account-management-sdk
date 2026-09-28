@@ -1,0 +1,79 @@
+{
+  "existing": {
+    "kamino_environment": {
+      "KAMINO_ENVIRONMENT00": {
+        "environments": [],
+        "errors": [],
+        "id": "KAMINO_ENVIRONMENT00",
+        "messages": [],
+        "result": {},
+        "success": false,
+        "environment_id": "ENVIRONMENT01",
+        "zone_id": "ZONE01"
+      },
+      "KAMINO_ENVIRONMENT01": {
+        "environments": [],
+        "errors": [],
+        "id": "KAMINO_ENVIRONMENT01",
+        "messages": [],
+        "result": {},
+        "success": false,
+        "environment_id": "ENVIRONMENT01",
+        "zone_id": "ZONE01"
+      },
+      "KAMINO_ENVIRONMENT02": {
+        "environments": [],
+        "errors": [],
+        "id": "KAMINO_ENVIRONMENT02",
+        "messages": [],
+        "result": {},
+        "success": false,
+        "environment_id": "ENVIRONMENT01",
+        "zone_id": "ZONE01"
+      }
+    }
+  },
+  "new": {
+    "kamino_environment": {
+      "kamino_environment_ref01": {
+        "environments": [],
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /zones/{zone_id}/environments/{environment_id}/rollback": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /zones/{zone_id}/environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}/environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /zones/{zone_id}/environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /zones/{zone_id}/environments/{environment_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /zones/{zone_id}/environments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+# BasicIamSingleUserFlow
+
+main: kit: flow: BasicIamSingleUserFlow:
+{
+  entity: "iam_single_user",
+  kind: "basic",
+  name: "BasicIamSingleUserFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_single_user_ref01",
+        srcdatavar: "iam_single_user_ref01_data",
+        suffix: "_up0",
+        textfield: "country"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_user_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "iam_single_user_ref01",
+        srcdatavar: "iam_single_user_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_single_user_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamSingleUserFlow"
+}

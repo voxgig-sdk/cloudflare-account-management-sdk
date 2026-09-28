@@ -1,0 +1,5117 @@
+{
+  "def": "cf-account-management-openapi.json",
+  "main": {
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        },
+        "repr": "auto"
+      },
+      "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
+      "entity": {
+        "account": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "account",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/move",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/move",
+                  "q": {
+                    "$action": "move"
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "lit": "move"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/profile",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/profile",
+                  "q": {
+                    "$action": "profile",
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "account_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "profile"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "account_setting": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "sh": "Controls Unique Transformations billing for the account.",
+              "t": "`$ARRAY`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            },
+            "value": {
+              "a": true,
+              "h": "Value",
+              "n": "value",
+              "r": true,
+              "sh": "Enables Unique Transformations billing for the account.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "account_setting",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/settings/transformations",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/settings/transformations",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "settings"
+                    },
+                    {
+                      "lit": "transformations"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/settings/ut-billing",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/settings/ut-billing",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "settings"
+                    },
+                    {
+                      "lit": "ut-billing"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /accounts/{account_id}/settings/ut-billing",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/accounts/{account_id}/settings/ut-billing",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "settings"
+                    },
+                    {
+                      "lit": "ut-billing"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "cache_purge_api_response_single_id": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Indicates the API call's success or failure.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "cache_purge_api_response_single_id",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /zones/{zone_id}/environments/{environment_id}/purge_cache",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "environment_id",
+                        "or": "environment_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/zones/{zone_id}/environments/{environment_id}/purge_cache",
+                  "q": {
+                    "exist": [
+                      "environment_id",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "purge_cache"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.zone"
+              ]
+            ]
+          }
+        },
+        "cps_communication_preference": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "languagelocale": {
+              "a": true,
+              "h": "Languagelocale",
+              "n": "languagelocale",
+              "r": false,
+              "sh": "The user's preferred language locale for communications.",
+              "t": "`$STRING`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "preferences": {
+              "a": true,
+              "h": "Preferences",
+              "n": "preferences",
+              "r": false,
+              "sh": "Preference keys mapped to subscription states to update.",
+              "t": "`$OBJECT`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "sh": "The user's communication preferences.",
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "cps_communication_preference",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /user/communication_preferences",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/user/communication_preferences",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "user"
+                    },
+                    {
+                      "lit": "communication_preferences"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /user/communication_preferences",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/user/communication_preferences",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "user"
+                    },
+                    {
+                      "lit": "communication_preferences"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "iam_api_response_single_id": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Account name",
+              "t": "`$STRING`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "standalone": {
+              "a": true,
+              "h": "Standalone",
+              "n": "standalone",
+              "r": false,
+              "sh": "Set to `true` and omit `unit` to create a standalone Free Account.",
+              "t": "`$BOOLEAN`"
+            },
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "t": "`$ANY`"
+            },
+            "unit": {
+              "a": true,
+              "h": "Unit",
+              "n": "unit",
+              "r": false,
+              "sh": "Information related to the tenant unit.",
+              "t": "`$OBJECT`"
+            }
+          },
+          "name": "iam_api_response_single_id",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "header": [
+                      {
+                        "a": true,
+                        "k": "header",
+                        "n": "idempotency_key",
+                        "or": "idempotency_key",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts",
+                  "q": {
+                    "exist": [
+                      "idempotency_key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "desc",
+                        "k": "query",
+                        "n": "direction",
+                        "or": "direction",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "example.com",
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 20,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts",
+                  "q": {
+                    "exist": [
+                      "direction",
+                      "name",
+                      "page",
+                      "per_page"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}",
+                  "q": {
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "iam_response_single_account": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "iam_response_single_account",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /accounts/{account_id}/move",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/accounts/{account_id}/move",
+                  "q": {
+                    "$action": "move",
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "move"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "account_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /accounts/{account_id}/profile",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/accounts/{account_id}/profile",
+                  "q": {
+                    "$action": "profile",
+                    "exist": [
+                      "account_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "profile"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /accounts/{account_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/accounts/{account_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "account_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "iam_single_user": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "country": {
+              "a": true,
+              "h": "Country",
+              "n": "country",
+              "r": false,
+              "sh": "The country in which the user lives.",
+              "t": "`$STRING`"
+            },
+            "first_name": {
+              "a": true,
+              "h": "First Name",
+              "n": "first_name",
+              "r": false,
+              "sh": "User's first name",
+              "t": "`$STRING`"
+            },
+            "last_name": {
+              "a": true,
+              "h": "Last Name",
+              "n": "last_name",
+              "r": false,
+              "sh": "User's last name",
+              "t": "`$STRING`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "telephone": {
+              "a": true,
+              "h": "Telephone",
+              "n": "telephone",
+              "r": false,
+              "sh": "User's telephone number",
+              "t": "`$STRING`"
+            },
+            "zipcode": {
+              "a": true,
+              "h": "Zipcode",
+              "n": "zipcode",
+              "r": false,
+              "sh": "The zipcode or postal code where the user lives.",
+              "t": "`$STRING`"
+            }
+          },
+          "name": "iam_single_user",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /user",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/user",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "user"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /user",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/user",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "user"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "kamino_environment": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "environments": {
+              "a": true,
+              "h": "Environments",
+              "n": "environments",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "kamino_environment",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /zones/{zone_id}/environments/{environment_id}/rollback",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "environment_id",
+                        "or": "environment_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/zones/{zone_id}/environments/{environment_id}/rollback",
+                  "q": {
+                    "exist": [
+                      "environment_id",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "environment_id"
+                    },
+                    {
+                      "lit": "rollback"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /zones/{zone_id}/environments",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/zones/{zone_id}/environments",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}/environments",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}/environments",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "patch": {
+              "input": "data",
+              "name": "patch",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /zones/{zone_id}/environments",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/zones/{zone_id}/environments",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /zones/{zone_id}/environments/{environment_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "environment_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/zones/{zone_id}/environments/{environment_id}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "environment_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /zones/{zone_id}/environments",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/zones/{zone_id}/environments",
+                  "q": {
+                    "exist": [
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "environments"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.zone"
+              ],
+              [
+                "$.main.kit.entity.zone"
+              ]
+            ]
+          }
+        },
+        "resource": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "result_info": {
+              "a": true,
+              "h": "Result Info",
+              "n": "result_info",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "resource",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/tags/resources",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": false,
+                        "k": "query",
+                        "n": "case_insensitive",
+                        "or": "case_insensitive",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "eyJhY2NvdW50X2lkIjoxMjM0NTY3ODkwfQ",
+                        "k": "query",
+                        "n": "cursor",
+                        "or": "cursor",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "id",
+                        "or": "id",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": [
+                          "production",
+                          "env=prod",
+                          "env=prod,staging",
+                          "!archived",
+                          "region!=us-west-1"
+                        ],
+                        "k": "query",
+                        "n": "tag",
+                        "or": "tag",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "type",
+                        "or": "type",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/tags/resources",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "case_insensitive",
+                      "cursor",
+                      "id",
+                      "name",
+                      "tag",
+                      "type"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    },
+                    {
+                      "lit": "resources"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "resource_tagging": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {},
+          "name": "resource_tagging",
+          "op": {
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /accounts/{account_id}/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "header": [
+                      {
+                        "a": true,
+                        "ex": "\"v1:RBNvo1WzZ4oRRq0W9-hkng\"",
+                        "k": "header",
+                        "n": "if_match",
+                        "or": "if_match",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/accounts/{account_id}/tags",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "if_match"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /zones/{zone_id}/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "header": [
+                      {
+                        "a": true,
+                        "ex": "\"v1:RBNvo1WzZ4oRRq0W9-hkng\"",
+                        "k": "header",
+                        "n": "if_match",
+                        "or": "if_match",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/zones/{zone_id}/tags",
+                  "q": {
+                    "exist": [
+                      "if_match",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ],
+              [
+                "$.main.kit.entity.zone"
+              ]
+            ]
+          }
+        },
+        "resource_tagging_tag_key_summary_response_collection": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "sh": "Contains an array of tag keys with their distinct values.",
+              "t": "`$ARRAY`"
+            },
+            "result_info": {
+              "a": true,
+              "h": "Result Info",
+              "n": "result_info",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "resource_tagging_tag_key_summary_response_collection",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/tags/summary",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "eyJhY2NvdW50X2lkIjoxMjM0NTY3ODkwfQ",
+                        "k": "query",
+                        "n": "cursor",
+                        "or": "cursor",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/tags/summary",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "cursor"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    },
+                    {
+                      "lit": "summary"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "resource_tagging_tag_keys_response_collection": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "sh": "Contains an array of distinct tag keys.",
+              "t": "`$ARRAY`"
+            },
+            "result_info": {
+              "a": true,
+              "h": "Result Info",
+              "n": "result_info",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "resource_tagging_tag_keys_response_collection",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/tags/keys",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "eyJhY2NvdW50X2lkIjoxMjM0NTY3ODkwfQ",
+                        "k": "query",
+                        "n": "cursor",
+                        "or": "cursor",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/tags/keys",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "cursor"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    },
+                    {
+                      "lit": "keys"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "resource_tagging_tag_values_response_collection": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$ARRAY`"
+            },
+            "result_info": {
+              "a": true,
+              "h": "Result Info",
+              "n": "result_info",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "resource_tagging_tag_values_response_collection",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/tags/values/{tag_key}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "environment",
+                        "k": "param",
+                        "n": "tag_key",
+                        "or": "tag_key",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "eyJhY2NvdW50X2lkIjoxMjM0NTY3ODkwfQ",
+                        "k": "query",
+                        "n": "cursor",
+                        "or": "cursor",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "zone",
+                        "k": "query",
+                        "n": "type",
+                        "or": "type",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/tags/values/{tag_key}",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "cursor",
+                      "tag_key",
+                      "type"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    },
+                    {
+                      "lit": "values"
+                    },
+                    {
+                      "var": "tag_key"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ]
+            ]
+          }
+        },
+        "resource_tagging_tagged_resource_response_single": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            }
+          },
+          "name": "resource_tagging_tagged_resource_response_single",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "f174e90a-fafe-4643-bbbc-4a0ed4fc8415",
+                        "k": "query",
+                        "n": "access_application_id",
+                        "or": "access_application_id",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "query",
+                        "n": "resource_id",
+                        "or": "resource_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "zone",
+                        "k": "query",
+                        "n": "resource_type",
+                        "or": "resource_type",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}/tags",
+                  "q": {
+                    "exist": [
+                      "access_application_id",
+                      "resource_id",
+                      "resource_type",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /accounts/{account_id}/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "query",
+                        "n": "resource_id",
+                        "or": "resource_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "worker",
+                        "k": "query",
+                        "n": "resource_type",
+                        "or": "resource_type",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "3f72a691-44b3-4c11-8642-c18a88ddaa5e",
+                        "k": "query",
+                        "n": "worker_id",
+                        "or": "worker_id",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/accounts/{account_id}/tags",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "resource_id",
+                      "resource_type",
+                      "worker_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /accounts/{account_id}/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "header": [
+                      {
+                        "a": true,
+                        "ex": "\"v1:RBNvo1WzZ4oRRq0W9-hkng\"",
+                        "k": "header",
+                        "n": "if_match",
+                        "or": "if_match",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/accounts/{account_id}/tags",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "if_match"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "accounts"
+                    },
+                    {
+                      "var": "account_id"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /zones/{zone_id}/tags",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "header": [
+                      {
+                        "a": true,
+                        "ex": "\"v1:RBNvo1WzZ4oRRq0W9-hkng\"",
+                        "k": "header",
+                        "n": "if_match",
+                        "or": "if_match",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "params": [
+                      {
+                        "a": true,
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/zones/{zone_id}/tags",
+                  "q": {
+                    "exist": [
+                      "if_match",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "tags"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.account"
+              ],
+              [
+                "$.main.kit.entity.zone"
+              ]
+            ]
+          }
+        },
+        "zone": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "account": {
+              "a": true,
+              "h": "Account",
+              "n": "account",
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "errors": {
+              "a": true,
+              "h": "Errors",
+              "n": "errors",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "messages": {
+              "a": true,
+              "h": "Messages",
+              "n": "messages",
+              "r": true,
+              "t": "`$ARRAY`"
+            },
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "The domain name.",
+              "t": "`$STRING`"
+            },
+            "paused": {
+              "a": true,
+              "h": "Paused",
+              "n": "paused",
+              "r": false,
+              "sh": "Indicates whether the zone is only using Cloudflare DNS services.",
+              "t": "`$BOOLEAN`"
+            },
+            "plan": {
+              "a": true,
+              "h": "Plan",
+              "n": "plan",
+              "r": false,
+              "sh": "(Deprecated) Please use the `/zones/{zone_id}/subscription` API to update a zone's plan.",
+              "t": "`$OBJECT`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "op": {
+                "list": {
+                  "req": false,
+                  "type": "`$ARRAY`"
+                }
+              },
+              "r": true,
+              "t": "`$OBJECT`"
+            },
+            "result_info": {
+              "a": true,
+              "h": "Result Info",
+              "n": "result_info",
+              "r": false,
+              "t": "`$OBJECT`"
+            },
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": true,
+              "sh": "Whether the API call was successful.",
+              "t": "`$BOOLEAN`"
+            },
+            "type": {
+              "a": true,
+              "h": "Type",
+              "n": "type",
+              "r": false,
+              "sh": "A full zone implies that DNS is hosted with Cloudflare.",
+              "t": "`$STRING`"
+            },
+            "vanity_name_servers": {
+              "a": true,
+              "h": "Vanity Name Servers",
+              "n": "vanity_name_servers",
+              "r": false,
+              "sh": "An array of domains used for custom name servers.",
+              "t": "`$ARRAY`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "zone",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /zones",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/zones",
+                  "q": {},
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "account_id",
+                        "or": "account_id",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "Dev Account",
+                        "k": "query",
+                        "n": "account_name",
+                        "or": "account_name",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "desc",
+                        "k": "query",
+                        "n": "direction",
+                        "or": "direction",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "all",
+                        "k": "query",
+                        "n": "match",
+                        "or": "match",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "example.com",
+                        "k": "query",
+                        "n": "name",
+                        "or": "name",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "status",
+                        "k": "query",
+                        "n": "order",
+                        "or": "order",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 1,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "ex": 20,
+                        "k": "query",
+                        "n": "per_page",
+                        "or": "per_page",
+                        "r": false,
+                        "t": "`$NUMBER`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "status",
+                        "or": "status",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "type",
+                        "or": "type",
+                        "r": false,
+                        "t": "`$ARRAY`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones",
+                  "q": {
+                    "exist": [
+                      "account_id",
+                      "account_name",
+                      "direction",
+                      "match",
+                      "name",
+                      "order",
+                      "page",
+                      "per_page",
+                      "status",
+                      "type"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "zones"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /zones/{zone_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/zones/{zone_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /zones/{zone_id}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/zones/{zone_id}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PUT /zones/{zone_id}/activation_check",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PUT",
+                  "o": "/zones/{zone_id}/activation_check",
+                  "q": {
+                    "$action": "activation_check",
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "activation_check"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "zone_hold": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": {
+            "hold": {
+              "a": true,
+              "h": "Hold",
+              "n": "hold",
+              "r": false,
+              "sh": "Whether the hostname is currently subject to a zone hold.",
+              "t": "`$BOOLEAN`"
+            },
+            "hold_after": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Hold After",
+              "n": "hold_after",
+              "r": false,
+              "sh": "The RFC3339-formatted timestamp at which the hold will be automatically re-enabled, if the hold was temporarily disabled.",
+              "t": "`$STRING`"
+            },
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
+            },
+            "include_subdomains": {
+              "a": true,
+              "h": "Include Subdomains",
+              "n": "include_subdomains",
+              "r": false,
+              "sh": "Whether the hold extends to block subdomains of the held zone.",
+              "t": "`$BOOLEAN`"
+            },
+            "result": {
+              "a": true,
+              "h": "Result",
+              "n": "result",
+              "r": false,
+              "t": "`$OBJECT`"
+            }
+          },
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "zone_hold",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "POST /zones/{zone_id}/hold",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": true,
+                        "k": "query",
+                        "n": "include_subdomain",
+                        "or": "include_subdomain",
+                        "r": false,
+                        "t": "`$BOOLEAN`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/zones/{zone_id}/hold",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "include_subdomain"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "hold"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}/hold/{zone_name}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "subdomain.example.com",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_name",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "zone_id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}/hold/{zone_name}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "zone_id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_name": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "zone_id"
+                    },
+                    {
+                      "lit": "hold"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /zones/{zone_id}/hold",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/zones/{zone_id}/hold",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "hold"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "DELETE /zones/{zone_id}/hold",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ],
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "2023-01-31T15:56:36Z",
+                        "k": "query",
+                        "n": "hold_after",
+                        "or": "hold_after",
+                        "r": false,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "DELETE",
+                  "o": "/zones/{zone_id}/hold",
+                  "q": {
+                    "exist": [
+                      "hold_after",
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "hold"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "PATCH /zones/{zone_id}/hold",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "params": [
+                      {
+                        "a": true,
+                        "ex": "023e105f4ecef8ad9ca31a8372d0c353",
+                        "k": "param",
+                        "n": "id",
+                        "or": "zone_id",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "PATCH",
+                  "o": "/zones/{zone_id}/hold",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "r": {
+                    "param": {
+                      "zone_id": "id"
+                    }
+                  },
+                  "s": [
+                    {
+                      "lit": "zones"
+                    },
+                    {
+                      "var": "id"
+                    },
+                    {
+                      "lit": "hold"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": [
+              [
+                "$.main.kit.entity.zone"
+              ]
+            ]
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
+          },
+          "description": "In-memory mock transport for testing without a live server",
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Test transport",
+          "transport": "base",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicAccountFlow": {
+          "active": true,
+          "entity": "account",
+          "key$": "BasicAccountFlow",
+          "kind": "basic",
+          "name": "BasicAccountFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "account_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "account_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicAccountSettingFlow": {
+          "active": true,
+          "entity": "account_setting",
+          "key$": "BasicAccountSettingFlow",
+          "kind": "basic",
+          "name": "BasicAccountSettingFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "account_setting_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "account_setting_ref01",
+                "srcdatavar": "account_setting_ref01_data",
+                "suffix": "_up0",
+                "textfield": "value"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-account_setting_ref01"
+                  }
+                }
+              ],
+              "v": []
+            }
+          ]
+        },
+        "BasicCachePurgeApiResponseSingleIdFlow": {
+          "active": true,
+          "entity": "cache_purge_api_response_single_id",
+          "key$": "BasicCachePurgeApiResponseSingleIdFlow",
+          "kind": "basic",
+          "name": "BasicCachePurgeApiResponseSingleIdFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "cache_purge_api_response_single_id_ref01"
+              },
+              "m": {
+                "environment_id": "environment01",
+                "zone_id": "zone01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            }
+          ]
+        },
+        "BasicCpsCommunicationPreferenceFlow": {
+          "active": true,
+          "entity": "cps_communication_preference",
+          "key$": "BasicCpsCommunicationPreferenceFlow",
+          "kind": "basic",
+          "name": "BasicCpsCommunicationPreferenceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "cps_communication_preference_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "cps_communication_preference_ref01",
+                "srcdatavar": "cps_communication_preference_ref01_data",
+                "suffix": "_up0",
+                "textfield": "languagelocale"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-cps_communication_preference_ref01"
+                  }
+                }
+              ],
+              "v": []
+            }
+          ]
+        },
+        "BasicIamApiResponseSingleIdFlow": {
+          "active": true,
+          "entity": "iam_api_response_single_id",
+          "key$": "BasicIamApiResponseSingleIdFlow",
+          "kind": "basic",
+          "name": "BasicIamApiResponseSingleIdFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_api_response_single_id_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "iam_api_response_single_id_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_api_response_single_id_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "iam_api_response_single_id01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "iam_api_response_single_id_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicIamResponseSingleAccountFlow": {
+          "active": true,
+          "entity": "iam_response_single_account",
+          "key$": "BasicIamResponseSingleAccountFlow",
+          "kind": "basic",
+          "name": "BasicIamResponseSingleAccountFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_response_single_account_ref01"
+              },
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_response_single_account_ref01",
+                "srcdatavar": "iam_response_single_account_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-iam_response_single_account_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_response_single_account_ref01",
+                "srcdatavar": "iam_response_single_account_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "iam_response_single_account01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-iam_response_single_account_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicIamSingleUserFlow": {
+          "active": true,
+          "entity": "iam_single_user",
+          "key$": "BasicIamSingleUserFlow",
+          "kind": "basic",
+          "name": "BasicIamSingleUserFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_single_user_ref01",
+                "srcdatavar": "iam_single_user_ref01_data",
+                "suffix": "_up0",
+                "textfield": "country"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-iam_single_user_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "iam_single_user_ref01",
+                "srcdatavar": "iam_single_user_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-iam_single_user_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicKaminoEnvironmentFlow": {
+          "active": true,
+          "entity": "kamino_environment",
+          "key$": "BasicKaminoEnvironmentFlow",
+          "kind": "basic",
+          "name": "BasicKaminoEnvironmentFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "kamino_environment_ref01"
+              },
+              "m": {
+                "zone_id": "zone01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "zone_id": "zone01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "kamino_environment_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "kamino_environment_ref01",
+                "srcdatavar": "kamino_environment_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-kamino_environment_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "kamino_environment_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "kamino_environment01",
+                "zone_id": "zone01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {
+                "zone_id": "zone01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "kamino_environment_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicResourceFlow": {
+          "active": true,
+          "entity": "resource",
+          "key$": "BasicResourceFlow",
+          "kind": "basic",
+          "name": "BasicResourceFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "resource_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicResourceTaggingFlow": {
+          "active": true,
+          "entity": "resource_tagging",
+          "key$": "BasicResourceTaggingFlow",
+          "kind": "basic",
+          "name": "BasicResourceTaggingFlow",
+          "param": {},
+          "step": []
+        },
+        "BasicResourceTaggingTagKeySummaryResponseCollectionFlow": {
+          "active": true,
+          "entity": "resource_tagging_tag_key_summary_response_collection",
+          "key$": "BasicResourceTaggingTagKeySummaryResponseCollectionFlow",
+          "kind": "basic",
+          "name": "BasicResourceTaggingTagKeySummaryResponseCollectionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "resource_tagging_tag_key_summary_response_collection_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicResourceTaggingTagKeysResponseCollectionFlow": {
+          "active": true,
+          "entity": "resource_tagging_tag_keys_response_collection",
+          "key$": "BasicResourceTaggingTagKeysResponseCollectionFlow",
+          "kind": "basic",
+          "name": "BasicResourceTaggingTagKeysResponseCollectionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "resource_tagging_tag_keys_response_collection_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicResourceTaggingTagValuesResponseCollectionFlow": {
+          "active": true,
+          "entity": "resource_tagging_tag_values_response_collection",
+          "key$": "BasicResourceTaggingTagValuesResponseCollectionFlow",
+          "kind": "basic",
+          "name": "BasicResourceTaggingTagValuesResponseCollectionFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "resource_tagging_tag_values_response_collection_ref01",
+                "srcdatavar": "resource_tagging_tag_values_response_collection_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "account_id": "account01",
+                "id": "resource_tagging_tag_values_response_collection01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-resource_tagging_tag_values_response_collection_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicResourceTaggingTaggedResourceResponseSingleFlow": {
+          "active": true,
+          "entity": "resource_tagging_tagged_resource_response_single",
+          "key$": "BasicResourceTaggingTaggedResourceResponseSingleFlow",
+          "kind": "basic",
+          "name": "BasicResourceTaggingTaggedResourceResponseSingleFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {
+                "account_id": "account01"
+              },
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "resource_tagging_tagged_resource_response_single_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "resource_tagging_tagged_resource_response_single_ref01",
+                "srcdatavar": "resource_tagging_tagged_resource_response_single_ref01_data",
+                "suffix": "_up0"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-resource_tagging_tagged_resource_response_single_ref01"
+                  }
+                }
+              ],
+              "v": []
+            }
+          ]
+        },
+        "BasicZoneFlow": {
+          "active": true,
+          "entity": "zone",
+          "key$": "BasicZoneFlow",
+          "kind": "basic",
+          "name": "BasicZoneFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_ref01"
+              },
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "zone_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_ref01",
+                "srcdatavar": "zone_ref01_data",
+                "suffix": "_up0",
+                "textfield": "name"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-zone_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_ref01",
+                "srcdatavar": "zone_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "zone01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-zone_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "zone01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "suffix": "_rt0"
+              },
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "zone_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicZoneHoldFlow": {
+          "active": true,
+          "entity": "zone_hold",
+          "key$": "BasicZoneHoldFlow",
+          "kind": "basic",
+          "name": "BasicZoneHoldFlow",
+          "param": {},
+          "step": [
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_hold_ref01"
+              },
+              "m": {
+                "zone_id": "zone01"
+              },
+              "o": "create",
+              "s": [],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_hold_ref01",
+                "srcdatavar": "zone_hold_ref01_data",
+                "suffix": "_up0",
+                "textfield": "hold_after"
+              },
+              "m": {},
+              "o": "update",
+              "s": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-zone_hold_ref01"
+                  }
+                }
+              ],
+              "v": []
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_hold_ref01",
+                "srcdatavar": "zone_hold_ref01_data",
+                "suffix": "_dt0"
+              },
+              "m": {
+                "id": "zone_hold01"
+              },
+              "o": "load",
+              "s": [],
+              "v": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-zone_hold_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "a": true,
+              "d": {},
+              "i": {
+                "ref": "zone_hold_ref01",
+                "suffix": "_rm0"
+              },
+              "m": {
+                "id": "zone_hold01"
+              },
+              "o": "remove",
+              "s": [],
+              "v": []
+            }
+          ]
+        }
+      },
+      "info": {
+        "description": "Cloudflare account and zone administration: profiles, settings, tags, activation, holds, environments, and communication preferences.",
+        "license": {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/licenses/BSD-3-Clause"
+        },
+        "security": {
+          "in": "header",
+          "name": "X-Auth-Email",
+          "prefix": "",
+          "scheme": "api_email",
+          "type": "apiKey"
+        },
+        "servers": [
+          {
+            "description": "Client API",
+            "url": "https://api.cloudflare.com/client/v4"
+          }
+        ],
+        "summary": "Cloudflare account and zone administration: profiles, settings, tags, activation, holds, environments, and communication preferences.",
+        "title": "Cloudflare Account & Zone Management",
+        "version": "4.0.0",
+        "website": "https://cloudflare.com"
+      },
+      "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "in": "",
+          "name": "",
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
+      "phase": {
+        "build": {
+          "active": true
+        },
+        "top": {
+          "active": true
+        }
+      },
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
+      "target": {
+        "go": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "go",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-cli",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go CLI"
+        },
+        "go-mcp": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "go-mcp",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [],
+          "title": "Go MCP server"
+        },
+        "lua": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.5"
+            }
+          },
+          "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "lua",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "luarocks",
+              "package": "",
+              "state": "pending",
+              "url": "https://luarocks.org",
+              "vault": {
+                "alias": "luarocks",
+                "env": "LUAROCKS_API_KEY",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
+          "title": "Lua"
+        },
+        "php": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "php",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "packagist",
+              "package": "",
+              "state": "pending",
+              "url": "https://packagist.org",
+              "vault": {
+                "alias": "packagist",
+                "env": "PACKAGIST_API_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
+          "title": "PHP"
+        },
+        "py": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "requests": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.33"
+            }
+          },
+          "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "py",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "pypi",
+              "package": "",
+              "state": "pending",
+              "url": "https://pypi.org",
+              "vault": {
+                "alias": "pypi",
+                "env": "",
+                "recipe": "pypi"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "json": {
+              "active": true,
+              "kind": "prod",
+              "version": "*"
+            }
+          },
+          "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "rb",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "rubygems",
+              "package": "",
+              "state": "pending",
+              "url": "https://rubygems.org",
+              "vault": {
+                "alias": "gem",
+                "env": "",
+                "recipe": "gem"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
+          "module": {
+            "goversion": "",
+            "name": "Cloudflare-account-management",
+            "package": "",
+            "path": ""
+          },
+          "name": "ts",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "root": false,
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen",
+          "provides": {
+            "schema": true,
+            "sekreto": true
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
+          "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": true
+        }
+      }
+    }
+  },
+  "name": "Cloudflare-account-management",
+  "origin": "voxgig-sdk"
+}

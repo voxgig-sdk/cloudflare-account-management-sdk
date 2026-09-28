@@ -1,0 +1,108 @@
+# Entity: cps_communication_preference
+
+main: kit: entity: cps_communication_preference: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    languagelocale: {
+      h: "Languagelocale"
+      n: "languagelocale"
+      r: false
+      sh: "The user's preferred language locale for communications."
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    preferences: {
+      h: "Preferences"
+      n: "preferences"
+      r: false
+      sh: "Preference keys mapped to subscription states to update."
+      t: "`$OBJECT`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      sh: "The user's communication preferences."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "cps_communication_preference"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /user/communication_preferences"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/user/communication_preferences"
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "communication_preferences"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /user/communication_preferences"
+            source: "openapi3"
+            version: 2
+          }
+          m: "PUT"
+          o: "/user/communication_preferences"
+          s: [
+            {
+              lit: "user"
+            }
+            {
+              lit: "communication_preferences"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

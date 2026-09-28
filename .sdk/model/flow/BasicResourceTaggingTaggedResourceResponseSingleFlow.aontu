@@ -1,0 +1,44 @@
+# BasicResourceTaggingTaggedResourceResponseSingleFlow
+
+main: kit: flow: BasicResourceTaggingTaggedResourceResponseSingleFlow:
+{
+  entity: "resource_tagging_tagged_resource_response_single",
+  kind: "basic",
+  name: "BasicResourceTaggingTaggedResourceResponseSingleFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "resource_tagging_tagged_resource_response_single_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "resource_tagging_tagged_resource_response_single_ref01",
+        srcdatavar: "resource_tagging_tagged_resource_response_single_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_tagging_tagged_resource_response_single_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceTaggingTaggedResourceResponseSingleFlow"
+}

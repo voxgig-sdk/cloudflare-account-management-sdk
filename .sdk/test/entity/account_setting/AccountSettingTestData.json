@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "account_setting": {
+      "ACCOUNT_SETTING00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "value": "s36",
+        "account_id": "ACCOUNT01",
+        "id": "ACCOUNT_SETTING00"
+      },
+      "ACCOUNT_SETTING01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "value": "s68",
+        "account_id": "ACCOUNT01",
+        "id": "ACCOUNT_SETTING01"
+      },
+      "ACCOUNT_SETTING02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "value": "s9a",
+        "account_id": "ACCOUNT01",
+        "id": "ACCOUNT_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "account_setting": {
+      "account_setting_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "value": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/settings/transformations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/settings/ut-billing": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/settings/ut-billing": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

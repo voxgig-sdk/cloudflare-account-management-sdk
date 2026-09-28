@@ -1,0 +1,18 @@
+# Flows
+
+@"./BasicAccountFlow.aontu"
+@"./BasicAccountSettingFlow.aontu"
+@"./BasicCachePurgeApiResponseSingleIdFlow.aontu"
+@"./BasicCpsCommunicationPreferenceFlow.aontu"
+@"./BasicIamApiResponseSingleIdFlow.aontu"
+@"./BasicIamResponseSingleAccountFlow.aontu"
+@"./BasicIamSingleUserFlow.aontu"
+@"./BasicKaminoEnvironmentFlow.aontu"
+@"./BasicResourceFlow.aontu"
+@"./BasicResourceTaggingFlow.aontu"
+@"./BasicResourceTaggingTagKeySummaryResponseCollectionFlow.aontu"
+@"./BasicResourceTaggingTagKeysResponseCollectionFlow.aontu"
+@"./BasicResourceTaggingTagValuesResponseCollectionFlow.aontu"
+@"./BasicResourceTaggingTaggedResourceResponseSingleFlow.aontu"
+@"./BasicZoneFlow.aontu"
+@"./BasicZoneHoldFlow.aontu"

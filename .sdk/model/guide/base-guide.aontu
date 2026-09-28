@@ -1,0 +1,171 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 16
+  metrics: count: path: 24
+  metrics: count: method: 44
+
+  entity: account: {
+    path: "/accounts/move": {
+      action: "move": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/profile": {
+      action: "profile": {}
+      rename: param: "account_id": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: account_setting: {
+    path: "/accounts/{account_id}/settings/transformations": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/settings/ut-billing": {
+      op: list: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: cache_purge_api_response_single_id: {
+    path: "/zones/{zone_id}/environments/{environment_id}/purge_cache": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: cps_communication_preference: {
+    path: "/user/communication_preferences": {
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: iam_api_response_single_id: {
+    path: "/accounts": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: iam_response_single_account: {
+    path: "/accounts/{account_id}": {
+      rename: param: "account_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/move": {
+      action: "move": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/profile": {
+      action: "profile": {}
+      op: update: method: *PUT
+    }
+  }
+
+  entity: iam_single_user: {
+    path: "/user": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+  }
+
+  entity: kamino_environment: {
+    path: "/zones/{zone_id}/environments": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: patch: method: *PATCH
+      op: update: method: *PUT
+    }
+    path: "/zones/{zone_id}/environments/{environment_id}": {
+      rename: param: "environment_id": *"id"
+      op: remove: method: *DELETE
+    }
+    path: "/zones/{zone_id}/environments/{environment_id}/rollback": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: resource: {
+    path: "/accounts/{account_id}/tags/resources": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource_tagging: {
+    path: "/accounts/{account_id}/tags": {
+      op: remove: method: *DELETE
+    }
+    path: "/zones/{zone_id}/tags": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: resource_tagging_tag_key_summary_response_collection: {
+    path: "/accounts/{account_id}/tags/summary": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource_tagging_tag_keys_response_collection: {
+    path: "/accounts/{account_id}/tags/keys": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: resource_tagging_tag_values_response_collection: {
+    path: "/accounts/{account_id}/tags/values/{tag_key}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: resource_tagging_tagged_resource_response_single: {
+    path: "/accounts/{account_id}/tags": {
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/zones/{zone_id}/tags": {
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zone: {
+    path: "/zones": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/zones/{zone_id}": {
+      rename: param: "zone_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/zones/{zone_id}/activation_check": {
+      action: "activation_check": {}
+      rename: param: "zone_id": *"id"
+      op: update: method: *PUT
+    }
+  }
+
+  entity: zone_hold: {
+    path: "/zones/{zone_id}/hold": {
+      rename: param: "zone_id": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/zones/{zone_id}/hold/{zone_name}": {
+      rename: param: "zone_name": *"id"
+      op: load: method: *GET
+    }
+  }
+
+}

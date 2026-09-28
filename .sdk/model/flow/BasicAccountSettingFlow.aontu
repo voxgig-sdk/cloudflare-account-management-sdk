@@ -1,0 +1,45 @@
+# BasicAccountSettingFlow
+
+main: kit: flow: BasicAccountSettingFlow:
+{
+  entity: "account_setting",
+  kind: "basic",
+  name: "BasicAccountSettingFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "account_setting_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "account_setting_ref01",
+        srcdatavar: "account_setting_ref01_data",
+        suffix: "_up0",
+        textfield: "value"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-account_setting_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAccountSettingFlow"
+}

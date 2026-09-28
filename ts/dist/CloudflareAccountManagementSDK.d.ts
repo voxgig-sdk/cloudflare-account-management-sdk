@@ -1,0 +1,87 @@
+import { AccountEntity } from './entity/AccountEntity';
+import { AccountSettingEntity } from './entity/AccountSettingEntity';
+import { CachePurgeApiResponseSingleIdEntity } from './entity/CachePurgeApiResponseSingleIdEntity';
+import { CpsCommunicationPreferenceEntity } from './entity/CpsCommunicationPreferenceEntity';
+import { IamApiResponseSingleIdEntity } from './entity/IamApiResponseSingleIdEntity';
+import { IamResponseSingleAccountEntity } from './entity/IamResponseSingleAccountEntity';
+import { IamSingleUserEntity } from './entity/IamSingleUserEntity';
+import { KaminoEnvironmentEntity } from './entity/KaminoEnvironmentEntity';
+import { ResourceEntity } from './entity/ResourceEntity';
+import { ResourceTaggingEntity } from './entity/ResourceTaggingEntity';
+import { ResourceTaggingTagKeySummaryResponseCollectionEntity } from './entity/ResourceTaggingTagKeySummaryResponseCollectionEntity';
+import { ResourceTaggingTagKeysResponseCollectionEntity } from './entity/ResourceTaggingTagKeysResponseCollectionEntity';
+import { ResourceTaggingTagValuesResponseCollectionEntity } from './entity/ResourceTaggingTagValuesResponseCollectionEntity';
+import { ResourceTaggingTaggedResourceResponseSingleEntity } from './entity/ResourceTaggingTaggedResourceResponseSingleEntity';
+import { ZoneEntity } from './entity/ZoneEntity';
+import { ZoneHoldEntity } from './entity/ZoneHoldEntity';
+export type * from './CloudflareAccountManagementTypes';
+import { inspect } from 'node:util';
+import type { Context, Feature } from './types';
+import { config } from './Config';
+import { CloudflareAccountManagementEntityBase } from './CloudflareAccountManagementEntityBase';
+import { Utility } from './utility/Utility';
+import { BaseFeature } from './feature/base/BaseFeature';
+declare const stdutil: Utility;
+declare class CloudflareAccountManagementSDK {
+    _mode: string;
+    _options: any;
+    _utility: Utility;
+    _features: Feature[];
+    _rootctx: Context;
+    constructor(options?: any);
+    options(): any;
+    utility(): any;
+    prepare(fetchargs?: any): Promise<any>;
+    direct(fetchargs?: any): Promise<Error | {
+        ok: boolean;
+        status: number;
+        headers: any;
+        data: any;
+        err?: undefined;
+    } | {
+        ok: boolean;
+        err: any;
+        status?: undefined;
+        headers?: undefined;
+        data?: undefined;
+    }>;
+    _rawRequest(fetchargs?: any): Promise<Error | {
+        ok: boolean;
+        status: number;
+        headers: any;
+        data: any;
+        err?: undefined;
+    } | {
+        ok: boolean;
+        err: any;
+        status?: undefined;
+        headers?: undefined;
+        data?: undefined;
+    }>;
+    graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
+    Account(entopts?: Record<string, any>): AccountEntity;
+    AccountSetting(entopts?: Record<string, any>): AccountSettingEntity;
+    CachePurgeApiResponseSingleId(entopts?: Record<string, any>): CachePurgeApiResponseSingleIdEntity;
+    CpsCommunicationPreference(entopts?: Record<string, any>): CpsCommunicationPreferenceEntity;
+    IamApiResponseSingleId(entopts?: Record<string, any>): IamApiResponseSingleIdEntity;
+    IamResponseSingleAccount(entopts?: Record<string, any>): IamResponseSingleAccountEntity;
+    IamSingleUser(entopts?: Record<string, any>): IamSingleUserEntity;
+    KaminoEnvironment(entopts?: Record<string, any>): KaminoEnvironmentEntity;
+    Resource(entopts?: Record<string, any>): ResourceEntity;
+    ResourceTagging(entopts?: Record<string, any>): ResourceTaggingEntity;
+    ResourceTaggingTagKeySummaryResponseCollection(entopts?: Record<string, any>): ResourceTaggingTagKeySummaryResponseCollectionEntity;
+    ResourceTaggingTagKeysResponseCollection(entopts?: Record<string, any>): ResourceTaggingTagKeysResponseCollectionEntity;
+    ResourceTaggingTagValuesResponseCollection(entopts?: Record<string, any>): ResourceTaggingTagValuesResponseCollectionEntity;
+    ResourceTaggingTaggedResourceResponseSingle(entopts?: Record<string, any>): ResourceTaggingTaggedResourceResponseSingleEntity;
+    Zone(entopts?: Record<string, any>): ZoneEntity;
+    ZoneHold(entopts?: Record<string, any>): ZoneHoldEntity;
+    static test(testoptsarg?: any, sdkoptsarg?: any): CloudflareAccountManagementSDK;
+    tester(testopts?: any, sdkopts?: any): CloudflareAccountManagementSDK;
+    toJSON(): {
+        name: string;
+    };
+    toString(): string;
+    [inspect.custom](): string;
+}
+declare const SDK: typeof CloudflareAccountManagementSDK;
+export { stdutil, config, BaseFeature, CloudflareAccountManagementEntityBase, CloudflareAccountManagementSDK, SDK, };

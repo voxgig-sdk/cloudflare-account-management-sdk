@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "cache_purge_api_response_single_id": {
+      "CACHE_PURGE_API_RESPONSE_SINGLE_ID00": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "environment_id": "ENVIRONMENT01",
+        "zone_id": "ZONE01",
+        "id": "CACHE_PURGE_API_RESPONSE_SINGLE_ID00"
+      },
+      "CACHE_PURGE_API_RESPONSE_SINGLE_ID01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "environment_id": "ENVIRONMENT01",
+        "zone_id": "ZONE01",
+        "id": "CACHE_PURGE_API_RESPONSE_SINGLE_ID01"
+      },
+      "CACHE_PURGE_API_RESPONSE_SINGLE_ID02": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false,
+        "environment_id": "ENVIRONMENT01",
+        "zone_id": "ZONE01",
+        "id": "CACHE_PURGE_API_RESPONSE_SINGLE_ID02"
+      }
+    }
+  },
+  "new": {
+    "cache_purge_api_response_single_id": {
+      "cache_purge_api_response_single_id_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /zones/{zone_id}/environments/{environment_id}/purge_cache": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "cps_communication_preference": {
+      "CPS_COMMUNICATION_PREFERENCE00": {
+        "errors": [],
+        "languagelocale": "s3d",
+        "messages": [],
+        "preferences": {},
+        "result": {},
+        "success": false,
+        "id": "CPS_COMMUNICATION_PREFERENCE00"
+      },
+      "CPS_COMMUNICATION_PREFERENCE01": {
+        "errors": [],
+        "languagelocale": "s79",
+        "messages": [],
+        "preferences": {},
+        "result": {},
+        "success": false,
+        "id": "CPS_COMMUNICATION_PREFERENCE01"
+      },
+      "CPS_COMMUNICATION_PREFERENCE02": {
+        "errors": [],
+        "languagelocale": "sb5",
+        "messages": [],
+        "preferences": {},
+        "result": {},
+        "success": false,
+        "id": "CPS_COMMUNICATION_PREFERENCE02"
+      }
+    }
+  },
+  "new": {
+    "cps_communication_preference": {
+      "cps_communication_preference_ref01": {
+        "errors": [],
+        "languagelocale": "sf1",
+        "messages": [],
+        "preferences": {},
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /user/communication_preferences": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /user/communication_preferences": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

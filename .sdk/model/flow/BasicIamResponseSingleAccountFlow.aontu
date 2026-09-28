@@ -1,0 +1,62 @@
+# BasicIamResponseSingleAccountFlow
+
+main: kit: flow: BasicIamResponseSingleAccountFlow:
+{
+  entity: "iam_response_single_account",
+  kind: "basic",
+  name: "BasicIamResponseSingleAccountFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_response_single_account_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "iam_response_single_account_ref01",
+        srcdatavar: "iam_response_single_account_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_response_single_account_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "iam_response_single_account_ref01",
+        srcdatavar: "iam_response_single_account_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "iam_response_single_account01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-iam_response_single_account_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamResponseSingleAccountFlow"
+}

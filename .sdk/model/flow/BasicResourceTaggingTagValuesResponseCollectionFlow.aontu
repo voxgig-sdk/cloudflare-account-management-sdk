@@ -1,0 +1,33 @@
+# BasicResourceTaggingTagValuesResponseCollectionFlow
+
+main: kit: flow: BasicResourceTaggingTagValuesResponseCollectionFlow:
+{
+  entity: "resource_tagging_tag_values_response_collection",
+  kind: "basic",
+  name: "BasicResourceTaggingTagValuesResponseCollectionFlow",
+  step: [
+    {
+      i: {
+        ref: "resource_tagging_tag_values_response_collection_ref01",
+        srcdatavar: "resource_tagging_tag_values_response_collection_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "resource_tagging_tag_values_response_collection01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-resource_tagging_tag_values_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceTaggingTagValuesResponseCollectionFlow"
+}

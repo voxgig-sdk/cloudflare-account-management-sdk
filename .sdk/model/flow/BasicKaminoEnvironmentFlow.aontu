@@ -1,0 +1,90 @@
+# BasicKaminoEnvironmentFlow
+
+main: kit: flow: BasicKaminoEnvironmentFlow:
+{
+  entity: "kamino_environment",
+  kind: "basic",
+  name: "BasicKaminoEnvironmentFlow",
+  step: [
+    {
+      i: {
+        ref: "kamino_environment_ref01"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "kamino_environment_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "kamino_environment_ref01",
+        srcdatavar: "kamino_environment_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-kamino_environment_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "kamino_environment_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "kamino_environment01",
+        zone_id: "zone01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        zone_id: "zone01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "kamino_environment_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicKaminoEnvironmentFlow"
+}

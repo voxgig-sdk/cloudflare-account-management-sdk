@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "account": {
+      "ACCOUNT00": {
+        "id": "ACCOUNT00"
+      },
+      "ACCOUNT01": {
+        "id": "ACCOUNT01"
+      },
+      "ACCOUNT02": {
+        "id": "ACCOUNT02"
+      }
+    }
+  },
+  "new": {
+    "account": {
+      "account_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /accounts/move": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/profile": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "existing": {
+    "resource_tagging_tag_values_response_collection": {
+      "RESOURCE_TAGGING_TAG_VALUES_RESPONSE_COLLECTION00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "tag_key": "TAG_KEY01",
+        "id": "RESOURCE_TAGGING_TAG_VALUES_RESPONSE_COLLECTION00"
+      },
+      "RESOURCE_TAGGING_TAG_VALUES_RESPONSE_COLLECTION01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "tag_key": "TAG_KEY01",
+        "id": "RESOURCE_TAGGING_TAG_VALUES_RESPONSE_COLLECTION01"
+      },
+      "RESOURCE_TAGGING_TAG_VALUES_RESPONSE_COLLECTION02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "tag_key": "TAG_KEY01",
+        "id": "RESOURCE_TAGGING_TAG_VALUES_RESPONSE_COLLECTION02"
+      }
+    }
+  },
+  "new": {
+    "resource_tagging_tag_values_response_collection": {
+      "resource_tagging_tag_values_response_collection_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/tags/values/{tag_key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+# BasicIamApiResponseSingleIdFlow
+
+main: kit: flow: BasicIamApiResponseSingleIdFlow:
+{
+  entity: "iam_api_response_single_id",
+  kind: "basic",
+  name: "BasicIamApiResponseSingleIdFlow",
+  step: [
+    {
+      i: {
+        ref: "iam_api_response_single_id_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "iam_api_response_single_id_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "iam_api_response_single_id_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "iam_api_response_single_id01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "iam_api_response_single_id_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIamApiResponseSingleIdFlow"
+}

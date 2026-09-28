@@ -1,0 +1,97 @@
+{
+  "existing": {
+    "zone": {
+      "ZONE00": {
+        "account": {},
+        "errors": [],
+        "id": "ZONE00",
+        "messages": [],
+        "name": "s7c",
+        "paused": false,
+        "plan": {},
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "type": "s82",
+        "vanity_name_servers": []
+      },
+      "ZONE01": {
+        "account": {},
+        "errors": [],
+        "id": "ZONE01",
+        "messages": [],
+        "name": "sf4",
+        "paused": false,
+        "plan": {},
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "type": "sfa",
+        "vanity_name_servers": []
+      },
+      "ZONE02": {
+        "account": {},
+        "errors": [],
+        "id": "ZONE02",
+        "messages": [],
+        "name": "s16c",
+        "paused": false,
+        "plan": {},
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "type": "s172",
+        "vanity_name_servers": []
+      }
+    }
+  },
+  "new": {
+    "zone": {
+      "zone_ref01": {
+        "account": {},
+        "errors": [],
+        "messages": [],
+        "name": "s1e4",
+        "paused": false,
+        "plan": {},
+        "result": {},
+        "result_info": {},
+        "success": false,
+        "type": "s1ea",
+        "vanity_name_servers": []
+      }
+    }
+  },
+  "requests": {
+    "POST /zones": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /zones/{zone_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /zones/{zone_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /zones/{zone_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /zones/{zone_id}/activation_check": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

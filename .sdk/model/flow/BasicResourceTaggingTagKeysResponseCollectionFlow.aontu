@@ -1,0 +1,26 @@
+# BasicResourceTaggingTagKeysResponseCollectionFlow
+
+main: kit: flow: BasicResourceTaggingTagKeysResponseCollectionFlow:
+{
+  entity: "resource_tagging_tag_keys_response_collection",
+  kind: "basic",
+  name: "BasicResourceTaggingTagKeysResponseCollectionFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "resource_tagging_tag_keys_response_collection_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicResourceTaggingTagKeysResponseCollectionFlow"
+}

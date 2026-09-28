@@ -1,0 +1,41 @@
+# BasicCpsCommunicationPreferenceFlow
+
+main: kit: flow: BasicCpsCommunicationPreferenceFlow:
+{
+  entity: "cps_communication_preference",
+  kind: "basic",
+  name: "BasicCpsCommunicationPreferenceFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cps_communication_preference_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "cps_communication_preference_ref01",
+        srcdatavar: "cps_communication_preference_ref01_data",
+        suffix: "_up0",
+        textfield: "languagelocale"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cps_communication_preference_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCpsCommunicationPreferenceFlow"
+}

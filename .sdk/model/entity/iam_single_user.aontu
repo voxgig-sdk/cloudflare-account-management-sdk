@@ -1,0 +1,103 @@
+# Entity: iam_single_user
+
+main: kit: entity: iam_single_user: {
+
+  alias: field: {}
+
+  fields: {
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "The country in which the user lives."
+      t: "`$STRING`"
+    }
+    first_name: {
+      h: "First Name"
+      n: "first_name"
+      r: false
+      sh: "User's first name"
+      t: "`$STRING`"
+    }
+    last_name: {
+      h: "Last Name"
+      n: "last_name"
+      r: false
+      sh: "User's last name"
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    telephone: {
+      h: "Telephone"
+      n: "telephone"
+      r: false
+      sh: "User's telephone number"
+      t: "`$STRING`"
+    }
+    zipcode: {
+      h: "Zipcode"
+      n: "zipcode"
+      r: false
+      sh: "The zipcode or postal code where the user lives."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "iam_single_user"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /user"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/user"
+          s: [
+            {
+              lit: "user"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /user"
+            source: "openapi3"
+            version: 2
+          }
+          m: "PATCH"
+          o: "/user"
+          s: [
+            {
+              lit: "user"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
